@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fastkart">
+    <meta name="keywords" content="Fastkart">
+    <meta name="author" content="Fastkart">
+    <link rel="icon" href="{% static 'assets/images/favicon/7.png' %}" type="image/x-icon">
+    <title>{% block title %}Base{% endblock title %}</title>
+
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Qwitcher+Grypen:wght@400;700&display=swap"
+        rel="stylesheet">
+
+
+    <!-- bootstrap css -->
+    <link id="rtl-link" rel="stylesheet" type="text/css" href="{% static 'assets/css/vendors/bootstrap.css' %}">
+
+    <!-- wow css -->
+    <link rel="stylesheet" href="{% static 'assets/css/animate.min.css' %}" />
+
+    <!-- font-awesome css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/vendors/font-awesome.css' %}">
+
+    <!-- feather icon css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/vendors/feather-icon.css' %}">
+
+    <!-- slick css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/vendors/slick/slick.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/vendors/slick/slick-theme.css' %}">
+
+    <!-- Iconly css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/bulk-style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/vendors/animate.css' %}">
+
+    <!-- Template css -->
+    <link id="color-link" rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}">
+<!----------------Font Awsome Link Start---------------->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
+<!----------------Font Awsome End---------------->
+
+<!--------------------Sumilon Templates Link-------------- -->
+    <link rel="shortcut icon" href="favicon.ico">
+    <!-- Google Font -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,400italic,300italic,300,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <!-- FontAwesome JS-->
+	<script defer src="{%static 'assets1/fontawesome/js/all.min.js' %}"></script>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="{%static 'assets1/plugins/bootstrap/css/bootstrap.min.css' %}">
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="{%static 'assets1/css/orbit-1.css' %}">
+<!--------------------Sumilon Templates Link-------------- -->
+    {% block head %} {% endblock head %}
+
+<body class="theme-color-5">
+
+    <!-- Header Start -->
+    <header class="p-1 mb-2 bg-secondary text-white" style="">
+        <div class="p-1 mb-2 bg-secondary text-white">
+            <div class="top-nav top-header sticky-header">
+            <div class="container-fluid-lg">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="navbar-top">
+                            <button class="navbar-toggler d-xl-none d-inline navbar-menu-button" type="button"
+                                data-bs-toggle="offcanvas" data-bs-target="#primaryMenu">
+                                <span class="navbar-toggler-icon">
+                                    <i class="fa-solid fa-bars"></i>
+                                </span>
+                            </button>
+                            <a href="{% url 'home'%}" class="web-logo nav-logo"><h2 class="text-light">CV Creator</h2></a>
+
+                            <div class="header-nav-middle">
+                                <div class="main-nav navbar navbar-expand-xl navbar-light navbar-sticky">
+                                    <div class="offcanvas offcanvas-collapse order-xl-2" id="primaryMenu">
+                                        <div class="offcanvas-header navbar-shadow">
+                                            <h5>Menu</h5>
+                                            <button class="btn-close lead" type="button" data-bs-dismiss="offcanvas"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="offcanvas-body">
+                                            <ul class="navbar-nav">
+                                                <li class="nav-item dropdown">
+                                                    <a class="btn btn-info" href="{% url 'home'%}">Home</a>
+                                                </li>
+                                                {% if user.is_authenticated %}
+                                                    <li class="nav-item dropdown">
+                                                        <a class="btn btn-info" href="{% url 'Cv_View'%}" >CV View</a>
+                                                    </li>
+                                                    <li class="nav-item dropdown">
+                                                        <a class="btn btn-info" href="{% url 'UserProfile'%}" >Profile</a>
+                                                    </li>
+                                                {% endif %}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="rightside-box">
+                                <div class="search-full">
+                                    <div class="input-group">
+                                        <span class="input-group-text">
+                                            <i data-feather="search" class="font-light"></i>
+                                        </span>
+                                        <input type="text" class="form-control search-type" placeholder="Search here..">
+                                        <span class="input-group-text close-search">
+                                            <i data-feather="x" class="font-light"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <ul class="right-side-menu">
+                                    <li class="right-side">
+                                        <div class="delivery-login-box">
+                                            <div class="delivery-icon">
+                                                <div class="search-box">
+                                                    <i data-feather="search"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="right-side">
+                                    </li>
+                                    <li class="right-side onhover-dropdown">
+                                        <div class="delivery-login-box">
+                                            <div class="delivery-icon">
+                                                <i data-feather="user"></i>
+                                            </div>
+                                            <div class="delivery-detail">
+                                                <h6>Hello,</h6>
+                                                <h5>My Account</h5>
+                                            </div>
+                                        </div>
+
+                                        <div class="onhover-div onhover-div-login">
+                                            <ul class="user-box-name">
+                                                {% if user.is_authenticated %}
+                                                    <li class="product-box-contain">
+                                                        <i></i>
+                                                        <a href="#">{{user.username}}</a>
+                                                    </li>
+                                                    <li class="product-box-contain">
+                                                        <i></i>
+                                                        <a href="">{{user.email}}</a>
+                                                    </li>
+                                                    <li class="product-box-contain">
+                                                        <i></i>
+                                                        <a href="{% url 'LogOut'%}">Log Out</a>
+                                                    </li>
+                                                {% else %}
+                                                    <li class="product-box-contain">
+                                                        <i></i>
+                                                        <a href="{% url 'Login'%}">Log In</a>
+                                                    </li>
+
+                                                    <li class="product-box-contain">
+                                                        <a href="{% url 'Registration'%}">Register</a>
+                                                    </li>
+
+                                                    <li class="product-box-contain">
+                                                        <a href="{% url 'forget_password'%}">Forgot Password</a>
+                                                    </li>
+                                                {% endif %}
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+
+    </header>
+    <!-- Header End -->
+
+{% block body %} {% endblock body %}
+
+
+
+    <!-- latest jquery-->
+    <script src="{% static 'assets/js/jquery-3.6.0.min.js' %}"></script>
+
+    <!-- jquery ui-->
+    <script src="{% static 'assets/js/jquery-ui.min.js' %}"></script>
+
+    <!-- Bootstrap js-->
+    <script src="{% static 'assets/js/bootstrap/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap/bootstrap-notify.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap/popper.min.js' %}"></script>
+
+    <!-- feather icon js-->
+    <script src="{% static 'assets/js/feather/feather.min.js' %}"></script>
+    <script src="{% static 'assets/js/feather/feather-icon.js' %}"></script>
+
+    <!-- Lazyload Js -->
+    <script src="{% static 'assets/js/lazysizes.min.js' %}"></script>
+
+    <!-- Slick js-->
+    <script src="{% static 'assets/js/slick/slick.js' %}"></script>
+    <script src="{% static 'assets/js/slick/slick-animation.min.js' %}"></script>
+    <script src="{% static 'assets/js/slick/custom_slick.js' %}"></script>
+
+    <!-- Auto Height Js -->
+    <script src="{% static 'assets/js/auto-height.js' %}"></script>
+
+    <!-- WOW js -->
+    <script src="{% static 'assets/js/wow.min.js' %}"></script>
+    <script src="{% static 'assets/js/custom-wow.js' %}"></script>
+
+    <!-- script js -->
+    <script src="{% static 'assets/js/script.js' %}"></script>
+
+    <!-- thme setting js -->
+    <script src="{% static 'assets/js/theme-setting.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Test HTML{% endblock title %}
+{% block body %}
+<section class="blog-banner-area" id="category">
+   <div class="container h-100">
+      <div class="blog-banner">
+         <div class="text-center">
+            <h1>Change Password</h1>
+            <nav aria-label="breadcrumb" class="banner-breadcrumb">
+               <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#">Home</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Change Password</li>
+               </ol>
+            </nav>
+         </div>
+      </div>
+   </div>
+</section>
+<!-- ================ End Content area ================= -->
+
+
+<!--================Login Box Area =================-->
+<section class="login_box_area section-margin">
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-6">
+            <div class="login_box_img">
+               <div class="hover">
+                  <img style="width: 70%;" src="{% static 'assets/images/forget_password.png' %}" alt="">
+               </div>
+            </div>
+         </div>
+         <div class="col-lg-6">
+            <div class="login_form_inner">
+               <h3>Enter New Password</h3>
+               <form class="row login_form" method="POST" action="">
+                  {% csrf_token %}
+                  <div class="col-md-12 form-group">
+                     <input type="password" class="form-control" id="password" placeholder="New Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'New Password'" name="new_password">
+                  </div>
+                  <div class="col-md-12 form-group">
+                     <input type="password" class="form-control" id="confirmpassword" placeholder="Confirm New Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Confirm New Password'" name="confirm_new_password">
+                  </div>
+
+                  <div class="col-md-12 form-group">
+                     <button type="submit" value="submit" class="button  w-100">Change Password</button>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+<!--================End Login Box Area =================-->
+{% endblock body %}
